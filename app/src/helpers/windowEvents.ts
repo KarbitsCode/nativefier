@@ -58,25 +58,26 @@ export function onNewWindowHelper(
         options.strictInternalUrls,
       )
     ) {
-      if (options.blockExternalUrls) {
-        showNavigationBlockedMessage(
-          `Navigation to external URL blocked by options: ${details.url}`,
-        )
-          .then(() => {
+      // Disabling openExternal feature
+      // if (options.blockExternalUrls) {
+        // showNavigationBlockedMessage(
+          // `Navigation to external URL blocked by options: ${details.url}`,
+        // )
+          // .then(() => {
             // blockExternalURL(details.url).then(resolve).catch((err: unknown) => {
-            //   log.error('blockExternalURL', err);
+              // log.error('blockExternalURL', err);
             // });
-          })
-          .catch((err: unknown) => {
-            throw err;
-          });
-        return { action: 'deny' };
-      } else {
-        openExternal(details.url).catch((err: unknown) => {
-          log.error('openExternal', err);
-        });
-        return { action: 'deny' };
-      }
+          // })
+          // .catch((err: unknown) => {
+            // throw err;
+          // });
+        // return { action: 'deny' };
+      // } else {
+        // openExternal(details.url).catch((err: unknown) => {
+          // log.error('openExternal', err);
+        // });
+        // return { action: 'deny' };
+      // }
     }
     // Normally the following would be:
     // if (urlToGo.startsWith('about:blank'))...
@@ -119,20 +120,21 @@ export function onWillNavigate(
       options.strictInternalUrls,
     )
   ) {
-    event.preventDefault();
-    if (options.blockExternalUrls) {
-      return new Promise((resolve) => {
-        showNavigationBlockedMessage(
-          `Navigation to external URL blocked by options: ${urlToGo}`,
-        )
-          .then(() => resolve())
-          .catch((err: unknown) => {
-            throw err;
-          });
-      });
-    } else {
-      return openExternal(urlToGo);
-    }
+    // Disabling openExternal feature
+    // event.preventDefault();
+    // if (options.blockExternalUrls) {
+      // return new Promise((resolve) => {
+        // showNavigationBlockedMessage(
+          // `Navigation to external URL blocked by options: ${urlToGo}`,
+        // )
+          // .then(() => resolve())
+          // .catch((err: unknown) => {
+            // throw err;
+          // });
+      // });
+    // } else {
+      // return openExternal(urlToGo);
+    // }
   }
   return Promise.resolve(undefined);
 }

@@ -61,10 +61,11 @@ log.debug('appArgs', appArgs);
 if (appArgs.portable) {
   log.debug(
     'App was built as portable; setting appData and userData to the app folder: ',
-    path.resolve(path.join(__dirname, '..', 'appData')),
+    path.resolve(path.join(__dirname, '..', '..', 'appData')),
   );
-  app.setPath('appData', path.join(__dirname, '..', 'appData'));
-  app.setPath('userData', path.join(__dirname, '..', 'appData'));
+  // Fixing this so "--portable" will work with "--conceal true"
+  app.setPath('appData', path.join(__dirname, '..', '..', 'appData'));
+  app.setPath('userData', path.join(__dirname, '..', '..', 'appData'));
 }
 
 if (!appArgs.userAgentHonest) {
