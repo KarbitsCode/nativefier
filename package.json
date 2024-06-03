@@ -31,7 +31,7 @@
     "url": "https://github.com/nativefier/nativefier/issues"
   },
   "scripts": {
-    "build-app": "cd app && webpack",
+    "build-app": "cd app && webpack --progress profile",
     "build-app-static": "ncp app/src/static/ app/lib/static/ && ncp app/dist/preload.js app/lib/preload.js && ncp app/dist/preload.js.map app/lib/preload.js.map",
     "build": "npm run clean && tsc --build shared src app && npm run build-app && npm run build-app-static",
     "build:watch": "npm run clean && tsc --build shared src app --watch",
