@@ -184,6 +184,7 @@ describe('Application launch', () => {
       true,
     )) as Page;
     const [dialogPromise] = (await once(
+      // @ts-ignore
       mainWindow,
       'dialog',
     )) as unknown as Promise<Dialog>[];
