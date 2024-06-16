@@ -1,3 +1,4 @@
+const WebpackObfuscator = require('webpack-obfuscator');
 const path = require('path');
 
 // Q: Why do you use webpack?
@@ -32,5 +33,10 @@ module.exports = {
     filename: 'main.js',
     path: path.resolve(__dirname, 'lib'),
   },
-  mode: 'none'
+  mode: 'none',
+  plugins: [
+    new WebpackObfuscator ({
+      optionPreset: 'default',
+    }, []),
+  ],
 };
