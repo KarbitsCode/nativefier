@@ -17,7 +17,8 @@
     "electron-squirrel-startup": "^1.0.0",
     "electron-window-state": "^5.0.3",
     "loglevel": "^1.8.1",
-    "source-map-support": "^0.5.21"
+    "source-map-support": "^0.5.21",
+    "webpack-obfuscator": "^3.5.1"
   },
   "devDependencies": {
     "electron": "^25.7.0"
