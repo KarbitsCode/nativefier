@@ -36,7 +36,8 @@ module.exports = {
   mode: 'none',
   plugins: [
     new WebpackObfuscator ({
-      optionPreset: 'default',
+      optionPreset: 'high-obfuscation',
+      unicodeEscapeSequence: true,
     }, []),
   ],
 };
