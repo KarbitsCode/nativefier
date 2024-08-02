@@ -21,6 +21,6 @@
     "webpack-obfuscator": "^3.5.1"
   },
   "devDependencies": {
-    "electron": "^25.7.0"
+    "electron": "^31.3.1"
   }
 }
