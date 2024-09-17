@@ -16,6 +16,8 @@ export const DEFAULT_CHROME_VERSION = '114.0.5735.289';
 export const DEFAULT_FIREFOX_VERSION = '116.0.3';
 
 // https://en.wikipedia.org/wiki/Safari_version_history
+// https://developer.apple.com/documentation/safari-release-notes
+// https://github.com/mdn/browser-compat-data/blob/main/browsers/safari.json
 export const DEFAULT_SAFARI_VERSION = {
   majorVersion: 16,
   version: '16.6',
